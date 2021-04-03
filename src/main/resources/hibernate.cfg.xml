@@ -1,0 +1,14 @@
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/taxiService</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">fuckingpassword</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="show_sql">true</property>
+    <mapping class="model.entities.Driver"/>
+    <mapping class="model.entities.Passenger"/>
+    <mapping class="model.entities.Vehicle"/>
+    <mapping class="model.entities.Trip"/>
+  </session-factory>
+</hibernate-configuration>
