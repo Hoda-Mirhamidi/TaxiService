@@ -16,11 +16,11 @@ public class Trip {
 
     @OneToOne
     @JoinColumn
-    private Driver driver;
+    Driver driver;
 
     @OneToOne
     @JoinColumn
-    private Passenger passenger;
+    Passenger passenger;
 
     private Boolean payment_check;
     private Double distance;
@@ -104,11 +104,11 @@ public class Trip {
     }
 
     public Double getDistance() {
-        return distance;
+        return Math.sqrt(((Math.pow(this.origin_longitude-this.destination_longitude,2))+Math.pow(this.origin_latitude-this.destination_latitude,2)));
     }
 
     public void setDistance(Double distance) {
-        this.distance = Math.sqrt(((Math.pow(origin_longitude-destination_longitude,2))+Math.pow(origin_latitude-destination_latitude,2)));
+        this.distance =  distance;
     }
 
     @Override

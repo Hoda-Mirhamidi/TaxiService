@@ -36,7 +36,7 @@ public class TripDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Trip> cq = cb.createQuery(Trip.class);
         Root<Trip> root = cq.from(Trip.class);
-        cq.select(root).where(cb.equal(root.get("driver_id"),driver.getId()));
+        cq.select(root).where(cb.equal(root.get("driver").get("id"),driver.getId()));
         List trips = session.createQuery(cq).getResultList();
         session.close();
         if(trips.size() == 0){

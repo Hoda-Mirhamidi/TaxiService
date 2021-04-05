@@ -16,8 +16,8 @@ public class Main {
         while (true){
             System.out.println("1) Add a group of drivers : ");
             System.out.println("2) Add a group of passengers : ");
-            System.out.println("3) model.Driver sign up or login : ");
-            System.out.println("4) model.Passenger sign up or login : ");
+            System.out.println("3) Driver sign up or login : ");
+            System.out.println("4) Passenger sign up or login : ");
             System.out.println("5) Show ongoing trip : ");
             System.out.println("6) Show list of drivers : ");
             System.out.println("7) Show list of passengers : ");
@@ -203,6 +203,12 @@ public class Main {
                                         System.out.println("Please enter the destination's latitude : ");
                                         Double destinationLatitude = scDouble.nextDouble();
                                         Trip trip = new Trip(originLongitude, originLatitude, destinationLongitude, destinationLatitude, p);
+                                        System.out.println(trip.payPerUnitOfDistance);
+                                        System.out.println(trip.getDestination_latitude());
+                                        System.out.println(trip.getDestination_longitude());
+                                        System.out.println(trip.getOrigin_latitude());
+                                        System.out.println(trip.getOrigin_longitude());
+                                        System.out.println(trip.getDistance());
                                         double cost = trip.getDistance() * trip.payPerUnitOfDistance;
                                         if (option == 2) {
                                             if (p.getCredit() < cost) {
